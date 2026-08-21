@@ -218,6 +218,11 @@ export const EcommerceStore = signalStore(
             patchState(store, {cartItems: updatedCartItems, wishlistItems: updatedWishlistItems});
 
         },
+        removeFromCart: (product: Product) =>{
+            patchState(store, {cartItems: store.cartItems().filter(c => c.product.id !== product.id),
+
+            });
+        },
 
                
     }))
